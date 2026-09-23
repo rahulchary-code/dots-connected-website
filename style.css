@@ -1,0 +1,231 @@
+/* Dots Connected — coming soon page
+   Palette: near-black ink, warm off-white ground, the logo's signal orange as the single accent */
+
+:root {
+  --ink: #1c1a17;
+  --ink-soft: #5c574f;
+  --ground: #faf8f4;
+  --panel: #f1ede5;
+  --orange: #e2591f;
+  --orange-dim: #e2591f22;
+  --rule: #dcd5c9;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+#dots {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+main, footer { position: relative; z-index: 1; }
+
+section, .hero {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.logo {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--orange);
+  font-weight: 500;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 5vw, 3.1rem);
+  line-height: 1.12;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.lede {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 34rem;
+  margin: 0 auto 2.25rem;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  padding: 0.55rem 1.1rem;
+  background: var(--panel);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 2.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.55; }
+}
+
+/* ---------- Section headings ---------- */
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+section {
+  border-top: 1px solid var(--rule);
+}
+
+.about p {
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  max-width: 34rem;
+}
+
+/* ---------- Notify form ---------- */
+
+.notify p {
+  color: var(--ink-soft);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+#notify-form {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+#notify-form input {
+  flex: 1 1 240px;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+#notify-form input:focus-visible,
+#notify-form button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+#notify-form button {
+  padding: 0.85rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+#notify-form button:hover { background: #c94c17; }
+
+.form-note {
+  min-height: 1.2em;
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  color: var(--orange);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.contact-grid .label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.contact-grid a,
+.contact-grid address {
+  color: var(--ink);
+  font-style: normal;
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.contact-grid a:hover { color: var(--orange); }
+
+@media (max-width: 560px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+  html { scroll-behavior: auto; }
+}

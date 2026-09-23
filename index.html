@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dots Connected — Business & Software Consulting | Launching Soon</title>
+<meta name="description" content="Dots Connected is a Hyderabad-based business and software consulting firm. Our new site is on its way — get in touch or leave your email to be notified at launch.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Dots Connected — Launching Soon">
+<meta property="og:description" content="Business & software consulting, Hyderabad. Our new website is on its way.">
+<meta property="og:image" content="assets/logo.jpg">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="dots" aria-hidden="true"></canvas>
+
+<main>
+  <section class="hero">
+    <img class="logo" src="assets/logo.jpg" alt="Dots Connected — Business Consultant logo, a circular emblem with the initials DC">
+
+    <p class="eyebrow">Business &amp; Software Consulting</p>
+    <h1>The dots are still<br>being connected.</h1>
+    <p class="lede">We're building something considered — a site that does justice to the work. In the meantime, here's who we are and how to reach us.</p>
+
+    <div class="status">
+      <span class="status-dot" aria-hidden="true"></span>
+      Site under construction — launching soon
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About us</h2>
+    <p>Dots Connected is a business and software consulting firm based in Hyderabad. We work with organisations to join up strategy, process and technology — spotting the connections that get missed when teams solve problems in isolation, and building the software to act on them.</p>
+  </section>
+
+  <section class="notify">
+    <h2>Be the first to know</h2>
+    <p>Leave your email and we'll let you know the moment the site is live.</p>
+    <form id="notify-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="email" class="sr-only">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="form-note" id="form-note" role="status"></p>
+  </section>
+
+  <section class="contact">
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Email</span>
+        <a href="mailto:info@dotsconnected.in">info@dotsconnected.in</a><br
+        <a href="mailto:dotsconnected2025@gmail.com">dotsconnected2025@gmail.com</a>       
+         
+
+      </div>
+      <div>
+        <span class="label">Phone</span>
+        <a href="tel:+919063305219">+91 90633 05219</a>
+      </div>
+      <div>
+        <span class="label">Office</span>
+        <address>Kondapur<br>Sai Pruthvi Enclave, <br>Hyderabad, Telangana 500084</address>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; <span id="year"></span> Dots Connected. All rights reserved.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
